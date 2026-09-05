@@ -98,9 +98,8 @@ public final class Ledger {
 
     /**
      * Value-dated slice ignoring booking day: sum of all entries (across the whole
-     * log, whenever appended) whose valueDate &le; day. This answers "what is the
-     * Day D balance now that later events have been booked", e.g. the Day 2 balance
-     * re-evaluated at end of Day 5.
+     * log, whenever appended) whose valueDate &le; day. This is the "final" view of
+     * a value date once every event in the window has been booked.
      */
     public Money valueDatedSlice(String accountId, Day day) {
         CurrencySpec ccy = account(accountId).currency();
@@ -108,6 +107,28 @@ public final class Ledger {
         for (LedgerEntry e : entries) {
             if (!e.accountId().equals(accountId)) continue;
             if (e.valueDate().onOrBefore(day)) {
+                sum = sum.add(e.signedAmount().amount());
+            }
+        }
+        return Money.of(ccy, ccy.round(sum));
+    }
+
+    /**
+     * As-of value-dated slice: the balance of a value date {@code valueDay} as it
+     * would have been reported at the end of booking day {@code asOf}. Sums entries
+     * whose valueDate &le; valueDay AND whose bookingDay &le; asOf.
+     *
+     * <p>This is the query that answers "the Day 2 closing balance, evaluated at end
+     * of Day 5": valueDay = Day 2, asOf = Day 5. At that point E7 (booked Day 5,
+     * value_date Day 2) is included but E9 (the reversal, booked Day 6) is not, so
+     * the result is 1200 - 950 - 620 = -370.00.
+     */
+    public Money valueDatedSliceAsOf(String accountId, Day valueDay, Day asOf) {
+        CurrencySpec ccy = account(accountId).currency();
+        BigDecimal sum = BigDecimal.ZERO;
+        for (LedgerEntry e : entries) {
+            if (!e.accountId().equals(accountId)) continue;
+            if (e.valueDate().onOrBefore(valueDay) && e.bookingDay().onOrBefore(asOf)) {
                 sum = sum.add(e.signedAmount().amount());
             }
         }
