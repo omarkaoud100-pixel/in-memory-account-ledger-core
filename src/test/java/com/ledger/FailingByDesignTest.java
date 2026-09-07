@@ -43,6 +43,8 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
  * choice is a documented judgment call (see AMBIGUITIES.md / NUMBERS.md). We keep
  * this test RED on purpose rather than delete it, as an honest marker of an
  * underspecified requirement.
+ *
+ * @author Omar Kaoud
  */
 class FailingByDesignTest {
 

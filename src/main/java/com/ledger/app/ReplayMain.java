@@ -14,6 +14,8 @@ import java.util.Map;
  * Runnable harness. Replays the scenario and prints, per day, the closing ledger
  * balance, whether an overdraft fee was assessed, authorization states, and any
  * errors, followed by the interest capitalization detail.
+ *
+ * @author Omar Kaoud
  */
 public final class ReplayMain {
 

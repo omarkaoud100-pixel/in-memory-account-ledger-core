@@ -12,6 +12,8 @@ import java.util.List;
 /**
  * The fixed six-day scenario: the two accounts and the ten-event stream, exactly
  * as specified. This is the single source of truth for the replay and the tests.
+ *
+ * @author Omar Kaoud
  */
 public final class Scenario {
 

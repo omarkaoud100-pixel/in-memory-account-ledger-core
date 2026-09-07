@@ -9,6 +9,8 @@ import java.math.RoundingMode;
  *
  * <p>Rounding mode is fixed to HALF_UP for every monetary quantization in this
  * system. See NUMBERS.md for why HALF_UP and not HALF_EVEN.
+ *
+ * @author Omar Kaoud
  */
 public enum CurrencySpec {
     AED(2),

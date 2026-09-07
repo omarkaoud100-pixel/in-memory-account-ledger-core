@@ -6,6 +6,8 @@ import java.util.Map;
 /**
  * The full outcome of replaying the event stream: per-account, per-day snapshots
  * plus the collected errors and the interest capitalization detail.
+ *
+ * @author Omar Kaoud
  */
 public record ReplayResult(
         List<DaySnapshot> snapshots,

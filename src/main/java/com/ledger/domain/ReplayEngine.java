@@ -31,6 +31,8 @@ import java.util.Map;
  *       was already booked on an earlier day.</li>
  *   <li>Interest uses the same forward-time closing balance that drives fees.</li>
  * </ul>
+ *
+ * @author Omar Kaoud
  */
 public final class ReplayEngine {
 

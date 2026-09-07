@@ -10,6 +10,8 @@ package com.ledger.domain;
  *
  * <p>{@code valueDate} determines which day's closing balance this entry falls
  * into; {@code bookingDay} records when it was actually appended (forward time).
+ *
+ * @author Omar Kaoud
  */
 public record LedgerEntry(
         String entryId,

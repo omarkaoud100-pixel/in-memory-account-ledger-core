@@ -23,6 +23,8 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
  * either confirms a criterion we accept, or demonstrates the true behaviour that
  * refutes a criterion we reject (see REJECTED.md). Numbers here are the ones a
  * human can and must reproduce by hand in the live defense.
+ *
+ * @author Omar Kaoud
  */
 class AcceptanceCriteriaTest {
 

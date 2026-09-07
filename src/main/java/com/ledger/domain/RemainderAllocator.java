@@ -28,6 +28,8 @@ import java.util.List;
  *
  * <p>This guarantees the returned amounts sum exactly to the target and each is
  * within one minor unit of its independently-rounded value.
+ *
+ * @author Omar Kaoud
  */
 public final class RemainderAllocator {
 

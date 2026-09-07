@@ -3,6 +3,8 @@ package com.ledger.domain;
 /**
  * A day in the replay window, 1..6. A tiny value type so that "booking day" and
  * "value date" can never be confused with an arbitrary int elsewhere in the code.
+ *
+ * @author Omar Kaoud
  */
 public record Day(int number) implements Comparable<Day> {
 

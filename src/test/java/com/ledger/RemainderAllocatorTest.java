@@ -12,6 +12,8 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 /**
  * Focused tests for the largest-remainder allocator, the mechanism that makes the
  * rounded daily interest accruals sum EXACTLY to the capitalized total.
+ *
+ * @author Omar Kaoud
  */
 class RemainderAllocatorTest {
 

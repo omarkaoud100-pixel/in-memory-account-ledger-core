@@ -13,6 +13,8 @@ package com.ledger.domain;
  * <p>The sealed hierarchy makes the set of event kinds exhaustive, so the replay
  * engine's switch is checked by the compiler - a new event type cannot be added
  * without the engine being forced to handle it.
+ *
+ * @author Omar Kaoud
  */
 public sealed interface Event
         permits Event.Credit, Event.Debit, Event.Authorization,

@@ -4,6 +4,8 @@ package com.ledger.domain;
  * Static account definition: id, currency and opening balance. The opening
  * balance for both accounts in this exercise is zero, but it is modelled
  * explicitly rather than assumed.
+ *
+ * @author Omar Kaoud
  */
 public record Account(String id, CurrencySpec currency, Money openingBalance) {
 

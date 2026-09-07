@@ -10,6 +10,8 @@ import java.util.Objects;
  * <p>Design note (defend this): using a dedicated value object rather than raw
  * BigDecimal makes it impossible to accidentally add AED to BHD, and centralises
  * per-currency rounding in one place.
+ *
+ * @author Omar Kaoud
  */
 public record Money(CurrencySpec currency, BigDecimal amount) {
 

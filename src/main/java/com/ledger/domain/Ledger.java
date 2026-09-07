@@ -25,6 +25,8 @@ import java.util.Map;
  *
  * <p>Append-only invariant: entries are only ever added to {@code entries}; no
  * method removes or mutates an existing entry.
+ *
+ * @author Omar Kaoud
  */
 public final class Ledger {
 
